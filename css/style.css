@@ -1,0 +1,66 @@
+/* Global styles for the whole project */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f8f8f8;
+	margin: 0;
+	padding: 0;
+	line-height: 1.6;
+}
+
+/* Navbar styles */
+nav {
+	position: sticky; /* Sticky navbar */
+	top: 0;
+	z-index: 1000; /* Ensure it stays above other elements */
+}
+
+nav ul {
+	display: flex; /* Flexbox for horizontal alignment */
+	justify-content: center; /* Center the items */
+	padding: 15px 0; /* Spacing around the navbar */
+}
+
+nav ul li {
+	margin: 0 15px; /* Space between items */
+	list-style-type: none;
+}
+
+nav ul li a {
+	font-size: 18px;
+	color: darkred; /* White text color */
+	padding: 10px 15px; /* Padding around links */
+	transition: all 0.3s ease; /* Smooth transitions */
+	border-radius: 5px; /* Rounded corners */
+	text-decoration: none;
+}
+
+nav ul li a:hover {
+	background-color: darkred; /* Background on hover */
+	color: white; /* Maintain text color */
+}
+
+/* Footer Styles */
+footer {
+	padding: 20px;
+	text-align: center;
+	background-color: darkred;
+	color: white;
+	margin-top: 40px;
+	font-size: 14px;
+}
+
+footer p {
+	margin: 5px 0; /* Spacing between footer text */
+}
+
+/* Centering the logo and heading */
+.logo-container {
+	text-align: center;
+	margin-top: 20px;
+}
+
+/* Adjusting the logo size */
+img.logo {
+	width: 150px;
+	height: auto;
+}
