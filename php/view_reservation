@@ -1,0 +1,105 @@
+<?php
+// Start the session to manage user interactions, if needed
+session_start();
+
+// Establish a connection to the database
+$conn = new mysqli('127.0.0.1', 'root', '', 'three_friends_restaurant');
+
+// Check if the connection is successful
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error); // Stop the script if the connection fails
+}
+
+// SQL query to fetch all reservations, ordered by date and time
+$sql = "SELECT * FROM reservations ORDER BY reservation_date, reservation_time";
+$result = $conn->query($sql); // Execute the query and get the result set
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Reservations - 3 Friends Restaurant</title>
+
+    <!-- Link to external CSS for styling -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/view_reservations.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <!-- Restaurant logo for branding -->
+            <img src="../media/logo.jpeg" alt="3 Friends Restaurant Logo" class="logo">
+            <h1>View Reservations</h1>
+        </div>
+
+        <!-- Navigation menu -->
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../html/About.html">About</a></li>
+                <li><a href="../php/menu.php">Menu</a></li>
+                <li><a href="../php/reservation.php">Reservations</a></li>
+                <li><a href="../php/contact.php">Contact</a></li>
+                <li><a href="../html/dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content section -->
+    <div class="container">
+        <h2>Reservations Overview</h2>
+        <p>Here you can view all current reservations at 3 Friends Restaurant. Please see the reservation details below:</p>
+        
+        <!-- Reservations table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>People</th>
+                    <th>Special Requests</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Check if there are any reservations -->
+                <?php if ($result->num_rows > 0): ?>
+                    <!-- Loop through each reservation and display the details in the table -->
+                    <?php while($row = $result->fetch_assoc()): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($row['name']); ?></td>
+                            <td><?php echo htmlspecialchars($row['email']); ?></td>
+                            <td><?php echo htmlspecialchars($row['phone']); ?></td>
+                            <td><?php echo htmlspecialchars($row['reservation_date']); ?></td>
+                            <td><?php echo htmlspecialchars($row['reservation_time']); ?></td>
+                            <td><?php echo htmlspecialchars($row['people']); ?></td>
+                            <td><?php echo htmlspecialchars($row['special_requests']); ?></td>
+                        </tr>
+                    <?php endwhile; ?>
+                <?php else: ?>
+                    <!-- Message when no reservations are found -->
+                    <tr>
+                        <td colspan="7">No reservations found</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Footer section with contact information -->
+    <footer>
+        <p>&copy; 2024 3 Friends Restaurant. All rights reserved.</p>
+        <!-- Clickable phone numbers for mobile users -->
+        <p>Contact us: <a href="tel:0406232082">0406 232 082</a> / <a href="tel:0422080268">0422 080 268</a></p>
+    </footer>
+</body>
+</html>
+
+<?php
+// Close the database connection after rendering the page
+$conn->close();
+?>
