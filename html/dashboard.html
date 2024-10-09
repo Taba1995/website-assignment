@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - 3 Friends Restaurant</title>
+
+    <!-- Linking external CSS stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <!-- Restaurant logo for branding -->
+            <img src="../media/logo.jpeg" alt="3 Friends Restaurant Logo" class="logo">
+            <h1>Admin Dashboard</h1>
+        </div>
+
+        <!-- Main navigation menu -->
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../html/About.html">About</a></li>
+                <li><a href="../php/menu.php">Menu</a></li>
+                <li><a href="../php/reservation.php">Reservations</a></li>
+                <li><a href="../php/contact.php">Contact</a></li>
+                <li><a href="../html/dashboard.html">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        <h2>Welcome to the Admin Dashboard</h2>
+        <p>
+            As an administrator, you have the tools to manage your restaurant’s operations efficiently.
+            Use the options below to manage orders, view reservations, and review customer feedback.
+        </p>
+
+        <!-- Admin menu with links to different management sections -->
+        <div class="menu">
+            <div class="menu-item" onclick="window.location.href='../php/view_order.php'">View Orders</div>
+            <div class="menu-item" onclick="window.location.href='../php/view_reservations.php'">View Reservations</div>
+            <div class="menu-item" onclick="window.location.href='../php/view_feedback.php'">View Feedback</div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 3 Friends Restaurant. All rights reserved.</p>
+        <!-- Clickable contact information -->
+        <p>Contact us: <a href="tel:0406232082">0406 232 082</a> / <a href="tel:0422080268">0422 080 268</a></p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - 3 Friends Restaurant</title>
+
+    <!-- Linking external CSS stylesheets -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <!-- Logo image for branding -->
+            <img src="../media/logo.jpeg" alt="3 Friends Restaurant Logo" class="logo">
+            <h1>Admin Login</h1>
+        </div>
+
+        <!-- Navigation menu -->
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../html/About.html">About</a></li>
+                <li><a href="../php/menu.php">Menu</a></li>
+                <li><a href="../php/reservation.php">Reservations</a></li>
+                <li><a href="../php/contact.php">Contact</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Admin login form container -->
+    <div class="login-container">
+        <p class="instructions">Please enter your credentials to log in.</p>
+
+        <!-- Error message handling -->
+        <?php if (isset($_GET['error'])): ?>
+        <p class="error-message">
+            <?php echo htmlspecialchars($_GET['error']); ?>
+        </p>
+        <?php endif; ?>
+
+        <!-- Login form -->
+        <form action="../php/admin_login.php" method="post">
+            <!-- Username input field -->
+            <input type="text" name="username" placeholder="Username" required>
+
+            <!-- Password input field -->
+            <input type="password" name="password" placeholder="Password" required>
+
+            <!-- Submit button -->
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 3 Friends Restaurant. All rights reserved.</p>
+        <!-- Contact numbers as clickable links -->
+        <p>Contact us: <a href="tel:0406232082">0406 232 082</a> / <a href="tel:0422080268">0422 080 268</a></p>
+    </footer>
+
+    <!-- JavaScript file for form validation or other login functionalities -->
+    <script src="../js/login.js"></script>
+</body>
+
+</html>
