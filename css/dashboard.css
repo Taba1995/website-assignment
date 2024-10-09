@@ -1,0 +1,70 @@
+/* Apply flexbox to body for a full-height layout */
+html,
+body {
+	height: 100%; /* Full height for html and body */
+	margin: 0; /* Remove default margin */
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f0f0f0;
+	display: flex;
+	flex-direction: column; /* Stack elements vertically */
+}
+
+/* Header styles */
+.header {
+	background-color: #5c6bc0; /* Header background color */
+	color: white;
+	padding: 20px;
+	text-align: center;
+}
+
+/* Content styles */
+.content {
+	flex: 1; /* Allow content to grow and fill available space */
+	display: flex;
+	flex-direction: column; /* Stack items vertically */
+	align-items: center; /* Center items horizontally */
+	margin-top: 50px;
+}
+
+/* Menu styles */
+.menu {
+	background-color: #fff;
+	width: 300px;
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	text-align: center; /* Center text inside menu */
+}
+
+/* Menu item styles */
+.menu-item {
+	padding: 15px;
+	margin: 10px 0;
+	background-color: darkred;
+	color: white;
+	text-align: center;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s; /* Smooth transition */
+}
+
+.menu-item:hover {
+	background-color: red; /* Darker color on hover */
+}
+
+/* Footer styles */
+footer {
+	padding: 20px;
+	text-align: center;
+	background-color: darkred;
+	color: white;
+	margin-top: 40px;
+	font-size: 14px;
+}
+
+footer p {
+	margin: 5px 0; /* Spacing between footer text */
+}
