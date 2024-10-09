@@ -1,0 +1,74 @@
+header h1 {
+	margin-bottom: 10px;
+}
+
+/* Section Styles */
+section.reservation-info {
+	padding: 40px;
+	text-align: center;
+}
+
+.reservation-info h2 {
+	color: darkred;
+	margin-bottom: 20px;
+	font-size: 28px;
+}
+
+.reservation-info p {
+	font-size: 18px;
+	color: #555;
+	margin-bottom: 30px;
+}
+
+/* Form Styles */
+form {
+	background-color: #fff;
+	padding: 40px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	max-width: 600px;
+	margin: 20px auto;
+	text-align: left;
+}
+
+form label {
+	display: block;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+form input,
+form textarea {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+form input[type="submit"] {
+	width: auto;
+	background-color: darkred;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	margin-top: 10px;
+}
+
+form input[type="submit"]:hover {
+	background-color: #cc0000;
+}
+
+/* Success and Error Messages */
+.success-message {
+	color: green;
+	margin-top: 20px;
+}
+
+.error-message {
+	color: red;
+	margin-top: 20px;
+}
